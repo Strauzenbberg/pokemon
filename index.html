@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex Interativa - Primeiros 20 Pokémon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
+        <!-- Header -->
+        <div class="bg-white shadow-lg">
+            <div class="container mx-auto px-4 py-6">
+                <div class="text-center mb-6">
+                    <h1 class="text-4xl font-bold text-gray-800 mb-2">
+                        🔴 Pokédex Interativa
+                    </h1>
+                    <p class="text-gray-600">
+                        Descobre os primeiros 20 Pokémon da região de Kanto
+                    </p>
+                </div>
+
+                <!-- Filtros -->
+                <div class="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
+                    <div class="relative flex-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <input
+                            type="text"
+                            id="search-input"
+                            placeholder="Procurar Pokémon..."
+                            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        />
+                    </div>
+                    <div class="relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4"><path d="M22 3H2L10 12.46V19L14 21V12.46L22 3Z"/></svg>
+                        <select
+                            id="type-filter"
+                            class="pl-10 pr-8 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
+                        >
+                            <option value="all">Todos os tipos</option>
+                            <option value="normal">Normal</option>
+                            <option value="fire">Fire</option>
+                            <option value="water">Water</option>
+                            <option value="electric">Electric</option>
+                            <option value="grass">Grass</option>
+                            <option value="ice">Ice</option>
+                            <option value="fighting">Fighting</option>
+                            <option value="poison">Poison</option>
+                            <option value="ground">Ground</option>
+                            <option value="flying">Flying</option>
+                            <option value="psychic">Psychic</option>
+                            <option value="bug">Bug</option>
+                            <option value="rock">Rock</option>
+                            <option value="ghost">Ghost</option>
+                            <option value="dragon">Dragon</option>
+                            <option value="dark">Dark</option>
+                            <option value="steel">Steel</option>
+                            <option value="fairy">Fairy</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid de Pokémon -->
+        <div class="container mx-auto px-4 py-8">
+            <div id="pokemon-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 pokemon-grid">
+                <!-- Pokémon cards will be injected here by JavaScript -->
+            </div>
+            <div id="no-pokemon-found" class="text-center py-12 hidden">
+                <div class="text-6xl mb-4">🔍</div>
+                <h3 class="text-xl font-semibold text-gray-700 mb-2">
+                    Nenhum Pokémon encontrado
+                </h3>
+                <p class="text-gray-500">
+                    Tenta ajustar os teus filtros de pesquisa
+                </p>
+            </div>
+            <div id="loading-spinner" class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center">
+                <div class="text-center">
+                    <div class="loading-pokeball mx-auto mb-4"></div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2 animate-fade-in-up">
+                        Carregando Pokédex...
+                    </h2>
+                    <p class="text-gray-600 animate-fade-in-up">
+                        A buscar os primeiros 20 Pokémon
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-6 mt-12">
+            <div class="container mx-auto px-4 text-center">
+                <p class="mb-2">
+                    Dados fornecidos pela
+                    <a 
+                        href="https://pokeapi.co" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="text-blue-400 hover:text-blue-300 underline"
+                    >
+                        PokéAPI
+                    </a>
+                </p>
+                <p class="text-gray-400 text-sm">
+                    Pokédex Interativa - Criada com HTML, CSS e JavaScript
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
